@@ -1,0 +1,16 @@
+{
+	"name":"Progetti ${materia}",
+	"includes": {
+		"body":"${specifica}",
+		"css":"Progetto_${materia}.css"	
+	},
+	"data": {		
+		"materia": "LBD",
+                "colore": "rgb(46,116,181)"
+	},
+	"segments": [
+		"$html5declaration",
+		"Progetto_${materia}_Master.md"	
+	],
+        "output": "Progetto_${materia}_${anno}_${numero}_${titolo?replace('[^a-z0-9_-]','_','ir')}.html"
+}

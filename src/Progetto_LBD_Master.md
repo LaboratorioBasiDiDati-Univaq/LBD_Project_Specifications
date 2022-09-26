@@ -1,13 +1,14 @@
-<html><head>
+<html>
+<head>
 <meta charset="UTF-8"/>
-<title>Progetti di Fine Corso</title>
+<title>${nomecorso}: Progetti di Fine Corso</title>
 <style>${css?no_esc}</style>
 </head>
 
 <body>
 <div class="intestazione">
 <div class="nprogetto">${numero!""}</div>
-<div class="ncorso">Corso di Laboratorio di Basi di Dati</div>
+<div class="ncorso">Corso di ${nomecorso}</div>
 <div class="aa">Progetti A.A. ${anno}/${(anno?number)+1}</div>
 </div>
 
@@ -203,4 +204,5 @@ Data di consegna del progetto: &nbsp;
 </#if>
 
 
-</body></html>
+</body>
+</html>

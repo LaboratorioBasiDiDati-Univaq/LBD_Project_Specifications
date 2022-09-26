@@ -2,6 +2,7 @@
 titolo: Catalogo Corsi
 numero: 2
 anno: 2017
+materia: LBD
 ---
 -------
 {#specifiche}

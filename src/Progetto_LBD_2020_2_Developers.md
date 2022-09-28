@@ -3,6 +3,8 @@ titolo: Developers
 numero: 2
 anno: 2020
 materia: LBD
+mainfile: Progetto_Master.rcp
+thisfile: specifica
 ---
 
 -------

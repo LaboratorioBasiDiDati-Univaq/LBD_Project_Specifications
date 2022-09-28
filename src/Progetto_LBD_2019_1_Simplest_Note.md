@@ -3,6 +3,8 @@ titolo: Simplest Note
 numero: 1
 anno: 2019
 materia: LBD
+mainfile: Progetto_Master.rcp
+thisfile: specifica
 ---
 
 -------

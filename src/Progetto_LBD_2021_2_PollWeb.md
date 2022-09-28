@@ -3,6 +3,8 @@ titolo: Guida TV
 numero: 1
 anno: 2021
 materia: LBD
+mainfile: Progetto_Master.rcp
+thisfile: specifica
 ---
 
 -------

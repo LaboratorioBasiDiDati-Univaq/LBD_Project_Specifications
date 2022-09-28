@@ -3,7 +3,10 @@ titolo: Catalogo Corsi
 numero: 2
 anno: 2017
 materia: LBD
+mainfile: Progetto_Master.rcp
+thisfile: specifica
 ---
+
 -------
 {#specifiche}
 

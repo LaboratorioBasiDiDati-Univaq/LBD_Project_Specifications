@@ -3,6 +3,8 @@ titolo: Biblioteca
 numero: 1
 anno: 2017
 materia: LBD
+mainfile: Progetto_Master.rcp
+thisfile: specifica
 ---
 
 

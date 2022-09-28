@@ -1,17 +1,12 @@
 {
 	"name":"<#if (lingua=='IT')>Progetti ${materia}<#else>${materia} Projects</#if>",
-	"data": {		
-        "colore": "gray",
-		"lingua": "IT"
-	},
-	"includes": [
-		{"body":"${specifica}"},
-		{"customizer": "Progetto_${materia}_Data.json"},
-		{"css":"Progetto.css"},		
-	],	
-	"segments": [
-		"$html5declaration",
-		"Progetto_${materia}_Master<#if (lingua!='IT')>_${lingua}</#if>.md"	
-	],
-    "output": "Progetto_${materia}_${anno}_${numero}<#if (lingua!='IT')>_${lingua}</#if>_${titolo?replace('[^a-z0-9_-]','_','ir')}.html"
+	"steps": [
+		{"set": {"colore": "gray", "lingua": "IT"}},
+		{"compile": ["${specifica}", "body"]},
+		{"compile": ["Progetto_${materia}_Data.json"]},
+		{"compile": ["Progetto.css","css","css"]},
+		{"set": {"$output": "Progetto_${materia}_${anno}_${numero}<#if (lingua!='IT')>_${lingua}</#if>_${titolo?replace('[^a-z0-9_-]','_','ir')}.html"}},
+		{"compile": ["<${html5declaration}>","$output","raw"]},
+		{"compile": ["Progetto_${materia}_Master<#if (lingua!='IT')>_${lingua}</#if>.md","$output"]}
+	]
 }

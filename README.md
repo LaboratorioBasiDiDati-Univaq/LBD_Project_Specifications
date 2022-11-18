@@ -4,7 +4,7 @@
 
 ## Usage
 
-This repository contains all the *final project specifications* of the [**Laboratorio di Basi di Dati course**](https://people.disim.univaq.it/~dellapenna/content.php?page=students). 
+This repository contains all the *final project specifications* of the [**Laboratorio di Basi di Dati course**](https://laboratoriobasididati-univaq.github.io). 
 
 The specifications are organized in folders corresponding to academic years (i.e., 2021 means academic year 2021/2022).
 

@@ -137,6 +137,6 @@ A questa valutazione si aggiungerà quella generale derivata dalla discussione d
 
 ### Ulteriori Informazioni
 
-Questa specifica è disponibile in formato PDF sulla pagina web del corso di Laboratorio di Basi di Dati, all'indirizzo http://www.di.univaq.it/gdellape. Ulteriori informazioni e chiarimenti sulle specifiche possono essere richiesti direttamente via email all'indirizzo giuseppe.dellapenna@univaq.it.
+Questa specifica è disponibile nel repository del corso di Laboratorio di Basi di Dati, all'indirizzo https://github.com/LaboratorioBasiDiDati-Univaq/LBD_Project_Specifications. Ulteriori informazioni e chiarimenti sulle specifiche possono essere richiesti direttamente via email all'indirizzo giuseppe.dellapenna@univaq.it.
 
 Si ricorda che i progetti vanno svolti in *piccoli* gruppi (tre persone è il numero consigliato). Eccezioni a questa regola andranno concordate direttamente col docente.

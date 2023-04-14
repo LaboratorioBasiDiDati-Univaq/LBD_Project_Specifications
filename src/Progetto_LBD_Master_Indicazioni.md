@@ -109,5 +109,5 @@ specifiche possono essere richiesti direttamente via email all'indirizzo
 giuseppe.dellapenna@univaq.it.
 
 Si ricorda che i progetti vanno svolti in *piccoli*
-gruppi (tre persone è il numero consigliato). Eccezioni a questa regola
+gruppi (due/tre persone è il numero consigliato). Eccezioni a questa regola
 andranno concordate direttamente col docente. 

@@ -24,7 +24,7 @@
 
 ### Formalizzazione dei vincoli non esprimibili nel modello ER
 
-- Elencate gli altri **vincoli **sui dati che avete individuato e che non possono essere espressi nel diagramma ER.
+- Elencate gli altri **vincoli** sui dati che avete individuato e che non possono essere espressi nel diagramma ER.
 
 ## Progettazione logica
 

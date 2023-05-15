@@ -12,10 +12,13 @@ There may be several specifications for a single academic year. In this case, **
 
 Specifications are written in Italian. **English translations**, if available, are marked with "\_EN\_" in the filename.
 
-Each specification is provided in two **formats**:
+Specifications may be provided in two **formats**:
 
 - *Markdown*, to be easily read with the GitHub viewer directly on your web browser (just select the file to display it).
+
 * *HTML* with embedded styles, to be easily exported to word processors, converted to PDF and printed (to download the HTML version, simply display the corresponding file, select "Raw" and save the file from your browser's menu).
+
+The repository also contains a report template (Template_Relazione_Progetto_LBD) that you can use as a starting point to write your own project reports.
 
 ---
 

@@ -11,16 +11,28 @@
 
 ## Analisi dei requisiti
 
-- E' possibile riportare in questa sezione i **requisiti **copiati dal documento di specifica, oppure semplicemente riassumerne gli aspetti più importanti.
-  Vanno quindi (eventualmente) discusse tutte le scelte progettuali relative al dominio, le ambiguità e il modo in cui sono state risolte.
+- E' possibile riportare in questa sezione i **requisiti** copiati dal documento di specifica, oppure semplicemente riassumerne gli aspetti più importanti. 
+
+- Vanno quindi (eventualmente) discusse tutte le scelte progettuali relative al dominio, le ambiguità e il modo in cui sono state risolte.
 
 - E' possibile infine inserire qui un glossario che riporta tutti gli oggetti di dominio individuati, con la loro semantica, i loro eventuali sinonimi e le loro proprietà.
 
 ## Progettazione concettuale
 
-- Riportate qui il **modello ER iniziale**. Cercate di renderlo *leggibile*, altrimenti correggerlo diventerà impossibile. Se è troppo piccolo, dividetelo in parti e/o allegate anche un'immagine ad alta risoluzione alla relazione.
+- Riportate qui il **modello ER finale** della vostra base di dati. Cercate di renderlo *leggibile*, altrimenti correggerlo diventerà impossibile. Se è troppo piccolo, dividetelo in parti e/o allegate anche un'immagine ad alta risoluzione alla relazione.
 
 - Commentate gli elementi non visibili nella figura (ad esempio il contenuto degli attributi composti) nonché le scelte/assunzioni che vi hanno portato a creare determinate strutture, se lo ritenete opportuno.
+
+**Errori da evitare:**
+
+- *Usare ID "sintetici" nei diagrammi ER come chiavi di entità in cui è possibile invece definire delle vere chiavi usando gli attributi ed eventualmente le relazioni.*   
+  Come spiegato a lezione, nella progettazione concettuale dobbiamo sforzarci di produrre documenti, compreso il diagramma ER, che siano il più possibile aderenti alla realtà del dominio modellato. Se quindi dobbiamo distinguere tra loro le istanze di un'entità, dobbiamo farlo usando le informazioni effettivamente presenti in tali istanze. Solo a livello relazionale, e poi nel DBMS, potremo scegliere di creare chiavi "sintetiche", spesso usando le colonne auto-generate offerte dal DBMS, per praticità e velocità, "declassando" invece la chiave precedentemente identificata a un vincolo UNIQUE.
+
+- *Inserire nelle entità attributi che derivano dalla successiva trasformazione nel modello relazionale.*   
+  Ad esempio, i campi che vengono inseriti nelle tabelle relazionali per fungere da FOREIGN KEY non devono mai comparire nel modello ER, in quanto sono semplicemente utilizzati per realizzare nel modello relazionale la semantica delle relazioni dell'ER stesso. In altre parole, nel modello ER le relazioni sono esplicite e graficamente rappresentate, mentre le FOREIGN KEY le sostituiscono solo nel modello relazionale. 
+  
+- *Usare un diagramma delle classi (ad esempio quello generato dal MySQL Workbench) e non un "vero" diagramma ER come quello visto a lezione.*   
+  Ci sono molti programmi di grafica con cui potete realizzare dei diagrammi ER con entità e vere relazioni (e se proprio non li trovate, potete sempre disegnarli a mano). Altri editor, invece, molto più legati al DBMS e al modello sottostante, vi permettono solo di creare degli pseudo-ER che sono una sorta di diagrammi delle classi (o delle tabelle in questo caso), in cui le cardinalità sono espresse graficamente (consiglio, soprattutto all'inizio, di usare invece le coppie di numeri (min,max) per la massima chiarezza) e soprattutto non sono previste le relazioni (indicate dai box a forma di rombo nell'ER classico). Questo porta a non inserire esplicitamente tali relazioni nel diagramma (ma solo una linea di associazione tra le entità, spesso senza un nome significativo) e/o a rappresentare le relazioni tramite generiche "join tables", che sono invece qualcosa che appartiene al modello relazionale.  
 
 ### Formalizzazione dei vincoli non esprimibili nel modello ER
 
@@ -30,9 +42,14 @@
 
 ### Ristrutturazione ed ottimizzazione del modello ER
 
-- Riportate qui il modello **ER ristrutturato** ed eventualmente ottimizzato. 
+- Riportate qui il **modello ER ristrutturato** ed eventualmente ottimizzato. 
 
 - Discutete le scelte effettuate, ad esempio nell'eliminare una generalizzazione o nello scindere un'entità.
+
+**Errori da evitare:**
+
+- *Confondere la fase di ristrutturazione / ottimizzazione del modello ER con una iterazione di raffinamento del diagramma ER.*   
+  Quella che definiamo "ristrutturazione e ottimizzazione del modello ER" è una fase ben specifica del processo, e non fa più propriamente parte della fase della progettazione concettuale, che arrivati a questo punto deve aver prodotto un modello ER finale, completo e corretto. Questa fase prevede invece solo una serie di trasformazioni che devono essere applicate al modello ER per adattarlo al meglio alla successiva trasformazione in modello relazionale. Ogni altra modifica al modello ER, quale l'inserimento di nuovi attributi o relazioni che non derivino dalle operazioni ammesse in questa fase, è un errore.
 
 ### Traduzione del modello ER nel modello relazionale
 
@@ -44,10 +61,14 @@
 
 ### Implementazione del modello relazionale
 
-- Inserite qui lo *script SQL* con cui **creare il database** il cui modello relazionale è stato illustrato nella sezione precedente. Ricordate di includere nel codice tutti
-  i vincoli che possono essere espressi nel DDL. 
+- Inserite qui lo *script SQL* con cui **creare il database** il cui modello relazionale è stato illustrato nella sezione precedente. Ricordate di includere nel codice tutti i vincoli che possono essere espressi nel DDL. 
 
-- Potete opzionalmente fornire anche uno script separato di popolamento (INSERT) del database su cui basare i test delle query descritte nella sezione successiva.
+- Potete *opzionalmente* fornire anche uno script separato di popolamento (INSERT) del database su cui basare i test delle query descritte nella sezione successiva.
+
+**Errori da evitare:**
+
+- *Non inserire esplicitamente le azioni ON DELETE e ON UPDATE sulle FOREIGN KEY.*   
+  Non inserire queste azioni vuol dire affidarsi ai default del DBMS, che solitamente sono troppo restrittivi, soprattutto per gli ON UPDATE. E' sempre meglio dichiarare esplicitamente il comportamento che si vuole applicare automaticamente in questi casi, anche se il default ci soddisfa, per rendere chiare le nostre intenzioni.
 
 ### Implementazione dei vincoli
 
